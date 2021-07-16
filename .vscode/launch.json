@@ -2,20 +2,21 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "BC140",
+            "name": "BC180",
             "request": "launch",
             "type": "al",
             "environmentType": "OnPrem",
-            "server": "http://localhost:8080/",
-            "serverInstance": "BC140",
-            "authentication": "Windows",
+            "server": "http://localhost:8080/",            
+            "serverInstance": "BC180",
+            "authentication":"Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": true,
-            "launchBrowser": true,
+            "port":7049,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "tenant": "default"
+            "tenant": "default",
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

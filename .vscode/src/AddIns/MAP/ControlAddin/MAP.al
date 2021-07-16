@@ -1,4 +1,4 @@
-controladdin "Map"
+controladdin "Bing Map"
 {
     RequestedHeight = 300;
     MinimumHeight = 300;

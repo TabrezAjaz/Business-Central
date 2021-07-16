@@ -13,7 +13,7 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "14.0.0.0",
+  "application": "17.0.0.0",
   "idRanges": [
     {
       "from": 50000,
@@ -22,5 +22,5 @@
   ],
   "contextSensitiveHelpUrl": "https://AllAboutControlAddIn.com/help/",
   "showMyCode": true,
-  "runtime": "3.2 "
+  "runtime": "6.0"
 }

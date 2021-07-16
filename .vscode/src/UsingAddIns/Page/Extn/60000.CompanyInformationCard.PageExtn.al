@@ -1,18 +1,18 @@
-pageextension 50140 CompanyInformationCardPageExtn extends "Company Information"
+pageextension 60000 CompanyInformationCardPageExtn extends "Company Information"
 {
     layout
     {
         //addafter(Picture)
         addlast(General)
         {
-            field("Report Layout Color"; "Report Layout Color")
+            field("Report Layout Color"; Rec."Report Layout Color")
             {
                 ApplicationArea = All;
                 Editable = false;
                 Visible = false;
             }
 
-            field("Report Font Color"; "Report Font Color")
+            field("Report Font Color"; Rec."Report Font Color")
             {
                 ApplicationArea = All;
                 Editable = false;

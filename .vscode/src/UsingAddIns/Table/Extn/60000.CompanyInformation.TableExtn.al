@@ -1,4 +1,4 @@
-tableextension 50140 CompanyInfoTableExtn extends "Company Information"
+tableextension 60000 CompanyInfoTableExtn extends "Company Information"
 {
     fields
     {

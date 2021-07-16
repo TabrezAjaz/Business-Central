@@ -7,13 +7,13 @@ page 60050 "MAP WebPage"
     {
         area(Content)
         {
-            usercontrol(Map; Map)
+            usercontrol(BingMap; "Bing Map")
             {
                 ApplicationArea = All;
                 trigger Ready()
                 begin
                     ////if (Rec.Latitude <> '') and (Rec.Longitude <> '') then
-                    CurrPage.Map.embedMAP(Rec.Latitude, Rec.Latitude);
+                    CurrPage.BingMap.embedMAP(Rec.Latitude, Rec.Latitude);
                 end;
             }
         }
@@ -21,6 +21,6 @@ page 60050 "MAP WebPage"
     trigger OnAfterGetCurrRecord()
     begin
         //if (Rec.Latitude <> '') and (Rec.Longitude <> '') then
-        CurrPage.Map.embedMAP(Rec.Latitude, Rec.Longitude);
+        CurrPage.BingMap.embedMAP(Rec.Latitude, Rec.Longitude);
     end;
 }

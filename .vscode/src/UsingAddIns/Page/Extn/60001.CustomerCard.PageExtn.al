@@ -5,11 +5,11 @@ pageextension 60001 CustomerCardExtn extends "Customer Card"
         // Add changes to page layout here
         addlast(General)
         {
-            field(Latitude; Latitude)
+            field(Latitude; Rec.Latitude)
             {
                 ApplicationArea = All;
             }
-            field(Longitude; Longitude)
+            field(Longitude; Rec.Longitude)
             {
                 ApplicationArea = All;
             }
