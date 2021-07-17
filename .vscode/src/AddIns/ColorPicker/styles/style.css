@@ -1,0 +1,15 @@
+.ColorPicker_TabStyle{
+    font-size: 10.5pt !important;
+    color: rgb(80, 92, 109) !important;
+    font-family: "Segoe UI", "Segoe WP", Segoe, device-segoe, Tahoma, Helvetica, Arial, sans-serif !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    padding: 5px 0;
+    vertical-align: top;
+}
+
+#myColorInput,#myColorInput1{
+    height: 30px; 
+    width: 57%;
+}

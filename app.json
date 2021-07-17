@@ -1,0 +1,26 @@
+{
+  "id": "ce843949-de62-42a7-978d-468dbfa53c34",
+  "name": "All About Control Add-Ins",
+  "publisher": "Tabrez Ajaz",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "This app extension contains everything related to Control Add-Ins.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "./logo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "14.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 99999
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://AllAboutControlAddIn.com/help/",
+  "showMyCode": true,
+  "runtime": "3.2 "
+}

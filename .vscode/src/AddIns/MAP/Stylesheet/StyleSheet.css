@@ -1,0 +1,11 @@
+body{
+    background-color: cornflowerblue;
+}
+
+button{
+    background-color: red;
+    color: blue;
+    text-decoration: chartreuse;
+    height: 100;
+    width: fit-content;     
+}
