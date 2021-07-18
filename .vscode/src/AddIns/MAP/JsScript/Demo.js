@@ -32,15 +32,18 @@ function embedMAP(latitude, longitude)
     createDiv();
     // alert(latitude);
     // alert(longitude);
+    ///*
     if ((latitude !== '') && (longitude !=='')) {
-        alert('loadMapScenario');
+        //alert('loadMapScenario');
         loadMapScenario(latitude,longitude);
     } else 
     {
-        alert('createDivWhenMapNotAvailable');
+        //alert('createDivWhenMapNotAvailable');
         createDivWhenMapNotAvailable();
         //document.getElementById('myMap').value = 'MAP not Available for this Customer as Longitude and Latitude is blank.';
-    } ``
+    }
+    //*/
+    //loadMapScenario(latitude,longitude);
 }
 
 function createDivWhenMapNotAvailable()
