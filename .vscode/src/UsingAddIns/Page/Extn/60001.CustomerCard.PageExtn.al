@@ -18,12 +18,12 @@ pageextension 60001 CustomerCardExtn extends "Customer Card"
         // MAP Page for Customer
         addfirst(FactBoxes)
         {
-            // part(GooglePieChart; "Google Pie Chart")
-            // {
-            //     SubPageLink = "No." = field("No.");
-            //     Caption = 'Google Pie Chart';
-            //     ApplicationArea = All;
-            // }
+            part(GooglePieChart; "Google Pie Chart")
+            {
+                SubPageLink = "No." = field("No.");
+                Caption = 'Statistics using Google Pie Chart';
+                ApplicationArea = All;
+            }
             part(MapWebPage; "MAP WebPage")
             {
                 SubPageLink = "No." = field("No.");

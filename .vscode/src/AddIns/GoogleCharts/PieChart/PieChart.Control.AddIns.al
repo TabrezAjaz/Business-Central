@@ -10,11 +10,19 @@ controladdin GooglePieChartControlAddIns
     // VerticalShrink = true;
     // HorizontalStretch = true;
     // HorizontalShrink = true;
+    // VerticalStretch = true;
+    // HorizontalStretch = true;
+    // RequestedWidth = 700;
+    RequestedHeight = 300;
+    MinimumHeight = 300;
+    // MaximumHeight = 300;    // RequestedWidth = 700;    // MinimumWidth = 700;    // MaximumWidth = 700;
     VerticalStretch = true;
+    VerticalShrink = true;
     HorizontalStretch = true;
-    RequestedWidth = 700;
+    HorizontalShrink = true;
     Scripts =
-        '.vscode/src/AddIns/GoogleCharts/PieChart/scripts/Main.js';
+        '.vscode/src/AddIns/GoogleCharts/PieChart/scripts/Main.js'
+        , 'https://www.gstatic.com/charts/loader.js"';
     StyleSheets =
         '.vscode/src/AddIns/GoogleCharts/PieChart/styles/style.css';
     StartupScript = '.vscode/src/AddIns/GoogleCharts/PieChart/scripts/Startup.js';

@@ -1,10 +1,9 @@
 page 60004 "Google Pie Chart"
 {
-    ApplicationArea = All;
-    UsageCategory = Administration;
-    // PageType = CardPart;
-    // SourceTable = Customer; // Change SourceTable for other Records
-
+    // ApplicationArea = All;
+    // UsageCategory = Administration;
+    PageType = CardPart;
+    SourceTable = Customer; // Change SourceTable for other Records    
     layout
     {
         area(Content)
@@ -12,6 +11,7 @@ page 60004 "Google Pie Chart"
             usercontrol(GooglePieChart; GooglePieChartControlAddIns)
             {
                 ApplicationArea = All;
+
                 trigger PieChartControlReadyEvent()
                 var
                     TotalBlanketOrder: Integer;
@@ -21,8 +21,9 @@ page 60004 "Google Pie Chart"
                     TotalSalesQuotes: Integer;
                     TotalReturnOrder: Integer;
                 begin
-                    //PrepareGooglePieChartData(TotalBlanketOrder, TotalCreditMemo, TotalSalesInvoice, TotalSalesOrder, TotalSalesQuotes, TotalReturnOrder);
-                    CurrPage.GooglePieChart.RenderPieChart('<div id="piechart" style="width: 500px; height: 500px;"></div>', TotalBlanketOrder, TotalCreditMemo, TotalSalesInvoice, TotalSalesOrder, TotalSalesQuotes, TotalReturnOrder);
+                    PrepareGooglePieChartData(TotalBlanketOrder, TotalCreditMemo, TotalSalesInvoice, TotalSalesOrder, TotalSalesQuotes, TotalReturnOrder);
+                    //CurrPage.GooglePieChart.RenderPieChart('<div id="piechart" style="width: 500px; height: 500px;"></div>', TotalBlanketOrder, TotalCreditMemo, TotalSalesInvoice, TotalSalesOrder, TotalSalesQuotes, TotalReturnOrder);
+                    CurrPage.GooglePieChart.RenderPieChart('<div id="piechart" style="width: 300px; height: 300px;"></div>', TotalBlanketOrder, TotalCreditMemo, TotalSalesInvoice, TotalSalesOrder, TotalSalesQuotes, TotalReturnOrder);
                     //CurrPage.GooglePieChart.RenderPieChart('<div id="piechart" style="width: 500px; height: 500px;"></div>');
                     //CurrPage.GooglePieChart.RenderPieChart('<div id="piechart" style="width: 500px; height: 500px;"></div>', PrepareGooglePieChartData);
                 end;
@@ -30,15 +31,25 @@ page 60004 "Google Pie Chart"
         }
     }
     trigger OnAfterGetCurrRecord()
+    var
+        TotalBlanketOrder: Integer;
+        TotalCreditMemo: Integer;
+        TotalSalesInvoice: Integer;
+        TotalSalesOrder: Integer;
+        TotalSalesQuotes: Integer;
+        TotalReturnOrder: Integer;
     begin
         //if (Rec.Latitude <> '') and (Rec.Longitude <> '') then
         //CurrPage.BingMap.embedMAP(Rec.Latitude, Rec.Longitude);
+        CurrPage.GooglePieChart.RenderPieChart('<div id="piechart" style="width: 300px; height: 300px;"></div>', TotalBlanketOrder, TotalCreditMemo, TotalSalesInvoice, TotalSalesOrder, TotalSalesQuotes, TotalReturnOrder);
     end;
 
     procedure PrepareGooglePieChartData(var TotalBlanketOrder: Integer; var TotalCreditMemo: Integer; var TotalSalesInvoice: Integer; var TotalSalesOrder: Integer; var TotalSalesQuotes: Integer; var TotalReturnOrder: Integer): Text
     //procedure PrepareGooglePieChartData(): Text
     var
         SalesHeader: Record "Sales Header";
+        SalesInvHeader: Record "Sales Invoice Header";
+        SalesShipMent: Record "Sales Shipment Header";
         // TotalBlanketOrder: Integer;
         // TotalCreditMemo: Integer;
         // TotalSalesInvoice: Integer;
@@ -47,7 +58,7 @@ page 60004 "Google Pie Chart"
         // TotalReturnOrder: Integer;
         out: Text;
     begin
-        //SalesHeader.SetRange("Sell-to Customer No.", Rec."No.");
+        SalesHeader.SetRange("Sell-to Customer No.", Rec."No.");
         if SalesHeader.FindSet() then begin
             repeat
                 IF SalesHeader."Document Type" = SalesHeader."Document Type"::"Blanket Order" THEN
@@ -63,13 +74,16 @@ page 60004 "Google Pie Chart"
                 IF SalesHeader."Document Type" = SalesHeader."Document Type"::"Return Order" THEN
                     TotalReturnOrder += 1;
             until SalesHeader.Next() = 0;
-            out := '["Customer","Analytics"],';
-            out += '["Blanket Order","' + format(TotalBlanketOrder) + '"],';
-            out += '["Credit Memo","' + format(TotalCreditMemo) + '"],';
-            out += '["Invoice","' + format(TotalSalesInvoice) + '",]';
-            out += '["Order","' + format(TotalSalesOrder) + '"],';
-            out += '["Quote","' + format(TotalSalesQuotes) + '"],';
-            out += '["Return Order","' + format(TotalReturnOrder) + '"]';
+            // out := 'google.visualization.arrayToDataTable([';
+            // out += '["Customer",''Analytics''],';
+            // out += '["Blanket Order",' + format(TotalBlanketOrder) + '],';
+            // out += '["Credit Memo",' + format(TotalCreditMemo) + '],';
+            // out += '["Invoice",' + format(TotalSalesInvoice) + '],';
+            // out += '["Order",' + format(TotalSalesOrder) + '],';
+            // out += '["Quote",' + format(TotalSalesQuotes) + '],';
+            // out += '["Return Order",' + format(TotalReturnOrder) + ']';
+            // //out += ']);';
+            // out += '])';
         end;
         exit(out);
     end;
